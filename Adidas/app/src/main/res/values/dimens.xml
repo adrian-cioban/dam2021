@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="corner_radius2">30dp</dimen>
+    <dimen name="stroke_size1">3dp</dimen>
+    <dimen name="stoke_size2">10dp</dimen>
+    <dimen name="stroke_size3">2dp</dimen>
+</resources>

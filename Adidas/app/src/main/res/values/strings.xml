@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Adidas</string>
+    <string name="tv_login">Already have an account?</string>
+    <string name="btn_login">LOG IN</string>
+    <string name="btn_google">CONTINUE</string>
+    <string name="btn_facebook">CONTINUE</string>
+    <string name="btn_signup">SIGN UP</string>
+    <string name="tv_email">EMAIL</string>
+    <string name="tv_pass">PASSWORD</string>
+    <string name="placeholder_pass">Password</string>
+    <string name="placeholder_email">EMAIL</string>
+    <string name="placeholder_pass2">PASSWORD</string>
+    <string name="btn_login2">LOGIN</string>
+    <string name="btn_forgotPass">FORGOT PASSWORD?</string>
+</resources>
