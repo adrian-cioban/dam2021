@@ -29,7 +29,7 @@
             android:textColor="@color/text_underline2" />
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/text_underline2"
@@ -50,7 +50,7 @@
             android:textColor="@color/text_underline2" />
 
         <EditText
-            android:id="@+id/editTextPass"
+            android:id="@+id/etPassLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/text_underline2"

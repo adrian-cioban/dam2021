@@ -12,4 +12,14 @@
     <string name="placeholder_pass2">PASSWORD</string>
     <string name="btn_login2">LOGIN</string>
     <string name="btn_forgotPass">FORGOT PASSWORD?</string>
+    <string name="hintFirstName">FIRST NAME</string>
+    <string name="hintLastName">LAST NAME</string>
+    <string name="radioMale_text">MALE</string>
+    <string name="radioFemale_text">FEMALE</string>
+    <string name="hintEmail">EMAIL</string>
+    <string name="hintPassword">PASSWORD</string>
+    <string name="hintLocation">LOCATION</string>
+    <string name="hintBirthdate">BIRTHDATE</string>
+    <string name="text_pass_hint">Min. 8 char, incl. 1 uppercase and 1 lowercase letter, and 1 number</string>
+    <string name="btnJoinText">JOIN</string>
 </resources>
