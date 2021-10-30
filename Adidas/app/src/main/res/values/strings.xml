@@ -22,4 +22,7 @@
     <string name="hintBirthdate">BIRTHDATE</string>
     <string name="text_pass_hint">Min. 8 char, incl. 1 uppercase and 1 lowercase letter, and 1 number</string>
     <string name="btnJoinText">JOIN</string>
+    <string name="hintTimeAndDifficulty">25 min - Advanced</string>
+    <string name="hintTitleWorkout">Upper Body HIIT</string>
+    <string name="hintTag">Arms</string>
 </resources>

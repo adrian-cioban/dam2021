@@ -14,4 +14,6 @@
     <color name="signUp_textColor">#757575</color>
     <color name="color_selectedRadio">#007680</color>
     <color name="color_signUpTitle">#363739</color>
+    <color name="workouts_timeColor">#616362</color>
+    <color name="workouts_TitleColor">#363739</color>
 </resources>

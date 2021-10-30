@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newWindow = new Intent(MainActivity.this, Registration.class);
+                Intent newWindow = new Intent(MainActivity.this, RegistrationActivity.class);
                 //startActivity(newWindow);
                 startActivityForResult(newWindow, mainActivityRequest);
             }
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newWindow = new Intent(MainActivity.this, Login.class);
+                Intent newWindow = new Intent(MainActivity.this, LoginActivity.class);
                 newWindow.putExtra("autoCompleteAccount", account);
                 startActivity(newWindow);
             }
