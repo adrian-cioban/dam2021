@@ -55,4 +55,10 @@ public class WorkoutsAdapter extends BaseAdapter {
         tv_Tag2.setText(current.getTags()[1]);
         return item;
     }
+
+    public void updateList(List<Model> listaNoua){
+        this.lista.clear();
+        this.lista.addAll(listaNoua);
+        notifyDataSetChanged();
+    }
 }
