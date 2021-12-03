@@ -5,18 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private final int mainActivityRequest = 100;
     private Account account;
+    private AccountDAO accountDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        accountDAO = AppDatabase.getInstance(this).getDatabase().accountDAO();
 
         Button btnGoogle = findViewById(R.id.btn_google);
         btnGoogle.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
                     Bundle bundle = data.getBundleExtra("bundleResponse");
                     account = (Account) bundle.getSerializable("account");
                     //Toast.makeText(MainActivity.this, account.toString(), Toast.LENGTH_LONG).show();
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            accountDAO.insert(account);
+                            List<Account> accounts = accountDAO.getAccounts();
+                            Log.v("accounts", accounts.toString());
+                        }
+                    });
+                    thread.start();
                 }
             }
         }

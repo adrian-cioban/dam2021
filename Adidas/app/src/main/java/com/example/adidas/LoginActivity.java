@@ -19,19 +19,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = getIntent();
-        Account account = (Account) intent.getSerializableExtra("autoCompleteAccount");
-        if (account != null) {
-            EditText etEmail = findViewById(R.id.etEmailLogin);
-            EditText etPassword = findViewById(R.id.etPassLogin);
-
-            etEmail.setText(account.getEmail());
-            etPassword.setText(account.getPassword());
-        }
-
         Button btnLogin = findViewById(R.id.btn_login2);
         etEmail = findViewById(R.id.etEmailLogin);
         etPassword = findViewById(R.id.etPassLogin);
+
+        Intent intent = getIntent();
+        Account account = (Account) intent.getSerializableExtra("autoCompleteAccount");
+        if (account != null) {
+            etEmail.setText(account.getEmail());
+            etPassword.setText(account.getPassword());
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
