@@ -9,6 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private final int mainActivityRequest = 100;
     private Account account;
     private AccountDAO accountDAO;
+    private List<Account> accounts;
+    private List<Account> accountsFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newWindow);
             }
         });
+
+        accountsFirebase = new ArrayList<>();
     }
 
     @Override
@@ -76,13 +87,45 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             accountDAO.insert(account);
-                            List<Account> accounts = accountDAO.getAccounts();
-                            Log.v("accounts", accounts.toString());
+                            accounts = accountDAO.getAccounts();
+                            Log.v("accounts-local", accounts.toString());
+                            writeToDatabase();
+                            readFromDatabase();
                         }
                     });
                     thread.start();
                 }
             }
         }
+    }
+
+    private void writeToDatabase(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("accounts");
+
+        myRef.setValue(accounts);
+    }
+
+    private void readFromDatabase(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("accounts");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    accountsFirebase.clear();
+                    for(DataSnapshot dss:dataSnapshot.getChildren()){
+                        Account account = dss.getValue(Account.class);
+                        accountsFirebase.add(account);
+                    }
+                }
+                Log.d("read", "Accounts from Firebase: " + accountsFirebase);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.w("cancelled", "Failed to read value.", error.toException());
+            }
+        });
     }
 }

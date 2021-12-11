@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "238477387917",
+    "project_id": "adidas-277ad",
+    "storage_bucket": "adidas-277ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238477387917:android:b37b351a32e7698f7b9ac4",
+        "android_client_info": {
+          "package_name": "com.example.adidas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238477387917-aqbmonhicq3i6h77d0jjj1f6neitt1m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNhXMVCVrY30dxiW84lYSe5qob54dAbAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238477387917-aqbmonhicq3i6h77d0jjj1f6neitt1m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
